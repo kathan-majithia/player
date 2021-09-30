@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --c: #55E6C1;
+    --n: #78e08f;
+    --conbg: #535c68b7;
+    --bc: #535c68;
+    --navbg: #2f3640;
+    --b: black;
+    --w: white;
+    --range: #b3acacd5;
+}
+
+body {
+    background-color: var(--bc);
+}
+
+.navbar {
+    /* display: flex; */
+    height: 35px;
+    width: 100vw;
+    background-color: var(--navbg);
+    color: var(--c);
+    flex-direction: row;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+ul li {
+    margin-left: 1.4vw;
+    margin-right: 5.9vw;
+    display: inline;
+    border: none;
+    height: max-content;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+ul li:hover {
+    cursor: pointer;
+    color: var(--navbg);
+    background-color: var(--c);
+    box-shadow: 2px 2px 20px var(--c);
+}
+
+.abs {
+    position: relative;
+}
+
+.mode {
+    position: absolute;
+    right: 2%;
+    top: 20%;
+}
+
+#mode {
+    width: 70px;
+    height: 28px;
+    border-radius: 25px;
+    border: 3px solid var(--c);
+    font-weight: 700;
+    transition: 0.35s;
+}
+
+#mode:hover {
+    background-color: var(--c);
+    color: white;
+    cursor: pointer;
+}
+
+.cv {
+    display: flex;
+    justify-content: center;
+    background-color: var(--b);
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 95vw;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    margin: auto;
+    pointer-events: none;
+}
+
+.title {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-size: 2.5vw;
+    color: var(--w);
+    transition: 0.5s;
+}
+
+img {
+    pointer-events: none;
+}
+
+.show {
+    position: absolute;
+    background-color: var(--b);
+    border-radius: 50%;
+    border: 20px solid var(--b);
+    opacity: 0;
+}
+
+.showskip {
+    position: absolute;
+    color: var(--w);
+    width: 100%;
+    display: none;
+}
+
+.back {
+    display: inline;
+    float: left;
+    margin-left: 25%;
+    cursor: default;
+    background-color: var(--b);
+    border-radius: 50%;
+    border: 10px solid var(--b);
+    opacity: 0;
+}
+
+.front {
+    display: inline;
+    float: right;
+    margin-right: 25%;
+    cursor: default;
+    background-color: var(--b);
+    border-radius: 50%;
+    border: 10px solid var(--b);
+    opacity: 0;
+}
+
+.ani {
+    animation: play 1s;
+}
+
+@keyframes play {
+    0% {
+        transform: scale(0%);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(100%);
+        opacity: 0;
+    }
+}
+
+.cv-con {
+    position: absolute;
+    height: 60%;
+    bottom: 0;
+    width: 97%;
+}
+
+.skipleft {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    width: 50%;
+    left: 0;
+}
+
+.skipright {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    width: 50%;
+    right: 0;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    height: 40px;
+    bottom: 2%;
+    width: 97%;
+    opacity: 0;
+    flex-wrap: wrap;
+    background-color: var(--conbg);
+    transition: 0.7s;
+}
+
+
+/* For sliding controls  */
+
+.cv-con {
+    width: 100%;
+}
+
+.controls {
+    bottom: -10%;
+    width: 100%;
+    opacity: 1;
+}
+
+.controls:hover,
+.cv-con:hover~.controls {
+    bottom: 0;
+}
+
+.controls:hover,
+.cv-con:hover~.controls {
+    opacity: 1;
+}
+
+.play-button {
+    transform: scale(100%);
+    margin-top: 0;
+}
+
+.buttons button {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.bar {
+    height: 0.35vw;
+    width: 100%;
+    background-color: var(--bc);
+    cursor: pointer;
+    display: inline;
+}
+
+.fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--n);
+}
+
+.miniplay {
+    width: 160px;
+    height: 90px;
+    background-color: var(--b);
+    position: absolute;
+    bottom: 3.5vw;
+    left: 0%;
+    border: 3px solid black;
+    display: none;
+}
+
+.minivideo {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+
+/* .ball{
+    background-color: var(--n);
+    width: 0.8vw;
+    height: 0.8vw;
+    border-radius: 50%;
+    position: absolute;
+    top: -10%;
+    left: 0%;
+} */
+
+.pos {
+    position: relative;
+    color: var(--w);
+    top: 0.3vw;
+    left: 0.5vw;
+    font-size: 100%;
+}
+
+.current {
+    display: inline-block;
+}
+
+.duration {
+    display: inline-block;
+}
+
+.percen {
+    color: var(--n);
+    margin-left: 1vw;
+}
+
+.skip {
+    margin-left: 0;
+}
+
+.sk {
+    margin-top: 0;
+    margin-left: 2vw;
+    display: inline-block;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+.sk:hover {
+    color: var(--b);
+}
+
+.vol {
+    margin-top: 0.5%;
+    margin-left: 2vw;
+}
+
+#volmod {
+    opacity: 0.6;
+}
+
+#volmod:hover {
+    opacity: 1;
+}
+
+#vol {
+    appearance: none;
+    background: var(--range);
+    outline: none;
+    height: 6px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    margin-left: 1.5vw;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--w);
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.playback {
+    position: absolute;
+    background-color: var(--w);
+    height: fit-content;
+    right: 12%;
+    top: 25%;
+    /* border: 4px solid var(--b); */
+    cursor: pointer;
+    color: var(--b);
+    transform: scale(80%);
+}
+
+.play-title {
+    position: relative;
+    border: 3px solid var(--b);
+}
+
+.play-title:hover {
+    background-color: var(--b);
+    color: var(--n);
+}
+
+.play-box {
+    background-color: var(--b);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 25px;
+    overflow: hidden;
+    /* top: -20px; */
+    right: -1.5%;
+    width: 100%;
+    border: 2px solid var(--b);
+    opacity: 0;
+}
+
+.playback:hover .play-box {
+    height: fit-content;
+    bottom: 100%;
+    opacity: 1;
+}
+
+.playback button {
+    border: 1px solid var(--b);
+    margin: 2px 0;
+    height: 150%;
+    font-size: 1em;
+}
+
+.playback button:hover {
+    background-color: var(--b);
+    color: var(--n);
+}
+
+.quality {
+    position: absolute;
+    background-color: var(--w);
+    height: fit-content;
+    right: 6%;
+    top: 25%;
+    /* border: 4px solid var(--b); */
+    cursor: pointer;
+    color: var(--b);
+    transform: scale(80%);
+}
+
+.qtitle {
+    position: relative;
+    border: 3px solid var(--b);
+}
+
+.qtitle:hover {
+    background-color: var(--b);
+    color: var(--n);
+}
+
+.qbox {
+    background-color: var(--b);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 25px;
+    overflow: hidden;
+    /* top: -20px; */
+    right: -1.5%;
+    width: 100%;
+    border: 2px solid var(--b);
+    opacity: 0;
+}
+
+.quality:hover .qbox {
+    height: fit-content;
+    bottom: 100%;
+    opacity: 1;
+}
+
+.quality button {
+    border: 1px solid var(--b);
+    margin: 2px 0;
+    height: 150%;
+    font-size: 1em;
+}
+
+.quality button:hover {
+    background-color: var(--b);
+    color: var(--n);
+}
+
+.screen-mode {
+    position: absolute;
+    top: 24%;
+    right: 1%;
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(100%);
+}
+
+.screen-mode:hover {
+    opacity: 1;
+}
+
+.screen-mode button,
+.vol button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 820px) {
+    .controls {
+        height: 4vw;
+    }
+    @keyframes play {
+        0% {
+            transform: scale(0%);
+            opacity: 0.4;
+        }
+        100% {
+            transform: scale(40%);
+            opacity: 0;
+        }
+    }
+    .play-button,
+    #vi {
+        transform: scale(70%);
+        margin-top: -0.5vw;
+        margin-left: -3%;
+    }
+    #vol {
+        width: 10%;
+        top: 2vw;
+        height: 4px;
+    }
+    .skip {
+        font-size: 2vw;
+        margin-top: 0.1vw;
+        margin-left: 0.2vw;
+    }
+    .time {
+        font-size: 2vw;
+        left: 0;
+        top: 0.6vw;
+    }
+    #volmod {
+        opacity: 1;
+        margin-top: 12%;
+    }
+    .screen-mode {
+        transform: scale(60%);
+        opacity: 1;
+        top: 0vw;
+        right: 0;
+    }
+    .playback {
+        transform: scale(60%);
+        top: 0.5vw;
+        right: 12vw;
+    }
+    .quality {
+        transform: scale(60%);
+        top: 0.5vw;
+        right: 6vw;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .play-button,
+    #vi,
+    .screen-mode {
+        transform: scale(40%);
+        margin-top: -2.0vw;
+        margin-left: -1vw;
+    }
+    .navbar ul {
+        margin-left: 2vw;
+        margin-top: 1vw;
+        font-size: 15px;
+    }
+    #vol {
+        height: 2px;
+    }
+    .playback {
+        transform: scale(50%);
+        top: -0.3vw;
+    }
+    .quality {
+        transform: scale(50%);
+        top: -0.3vw;
+    }
+    .screen-mode {
+        margin-top: -1.3vw;
+    }
+}
