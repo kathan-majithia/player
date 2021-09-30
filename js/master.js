@@ -105,7 +105,7 @@ qua.forEach(e => {
             video.src = 'low.mp4'
         }
         if (e.dataset.q == 2) {
-            video.src = 'hd.mp4'
+            video.src = 'Meeting.mp4'
         }
         if (e.dataset.q == 3) {
             video.src = 'ultra.mp4'
