@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 // v = v.split(".")
 // v = v[0].replace("%20", " ")
 // title.innerHTML = v;
-title.innerHTML = "Cat Playing"
+title.innerHTML = "Iron Man meets Iron Lady"
 
 bt.addEventListener('click', () => {
     plau()
