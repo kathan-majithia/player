@@ -13,7 +13,10 @@
   <li><div>Playback speed options</div></li><br>
   <li><div>Quality options (Low, HD, Ultra)</div></li><br>
   <li><div>Full screen mode</div></li><br>
-  <li><div>Progress bar indicating current state of the video</div></li><br>
+  <li><div>Timeline indicating current state of the video</div></li><br>
+  <li><div>Preview of video to skip to a specific location</div></li><br>
+  <li><div>Toggle White/Dark Mode</div></li><br>
+  
   
 
 
