@@ -5,4 +5,9 @@
 <h3>This page is semi-responsive, which means it works on computers, tablets, and phones (only landscape mode)</h3><br>
 
 <h2>Key features : </h2>
-<div>Video player with custom video controllerr</div><br>
+<ul>
+  <li><div>Video player with custom video controllerr</div></li><br>
+
+
+
+</ul>
