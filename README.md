@@ -11,6 +11,10 @@
   <li><div>Skip buttons both forward and backward</div></li><br>
   <li><div>Volume controller</div></li><br>
   <li><div>Playback speed options</div></li><br>
+  <li><div>Quality options (Low, HD, Ultra)</div></li><br>
+  <li><div>Full screen mode</div></li><br>
+  <li><div>Progress bar indicating current state of the video</div></li><br>
+  
 
 
 
